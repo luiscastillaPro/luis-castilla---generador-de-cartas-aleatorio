@@ -1,12 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
 body {
   background-color: green;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
 }
+
 .container-sm {
   background-color: white;
-  height: 80vh;
+  height: 68vh;
   margin: auto;
   margin-top: 20px;
   border-radius: 20px;
@@ -15,18 +17,21 @@ body {
   display: flex;
   box-shadow: 14px 14px 14px 14px rgba(0, 0, 0, 0.685);
 }
+
 #bottom-tipo {
   display: flex;
   flex-direction: column;
   justify-content: start;
   transform: rotate(180deg);
 }
+
 #card-value {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2em;
 }
+
 .boton {
   display: block;
   margin: auto;
@@ -34,8 +39,50 @@ body {
   font-size: 30px;
   border-radius: 10px;
   padding: 10px 50px;
-  background-color: rgba(8, 8, 216, 0.815);
+  background-color: rgba(180, 7, 7, 0.815);
   color: white;
   border: solid 2px black;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.685);
+  transition: all 0.3s ease;
+}
+
+.boton:hover {
+  background-color: rgb(241, 7, 7);
+  color: rgb(255, 255, 255);
+  border-color: rgb(253, 253, 251);
+  transform: scale(1.1);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.titulo {
+  text-align: center;
+  font-size: 3em;
+  color: rgba(180, 7, 7, 0.815);
+  text-shadow: 0 0 20px rgb(252, 252, 253), 0 0 20px rgb(249, 249, 250),
+    0 0 30px rgb(248, 248, 250);
+  padding: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.titulo:hover {
+  transform: scale(1.15);
+  text-shadow: 0 0 50px rgb(251, 251, 255), 0 0 50px rgb(249, 249, 252),
+    0 0 50px rgb(249, 249, 252);
+}
+
+@keyframes brillo {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgb(242, 242, 245), 0 0 20px rgb(251, 251, 252),
+      0 0 30px rgb(248, 248, 250);
+  }
+  50% {
+    text-shadow: 0 0 20px rgb(7, 7, 7), 0 0 30px rgba(12, 12, 12, 0.8),
+      0 0 40px rgba(8, 8, 8, 0.6);
+  }
+}
+
+.titulo {
+  animation: brillo 2s infinite;
 }

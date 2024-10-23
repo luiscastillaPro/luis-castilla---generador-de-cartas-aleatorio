@@ -1,4 +1,3 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
 
@@ -21,21 +20,25 @@ const valores = [
   "Q",
   "K"
 ];
+
 function numeroAleatorio(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
+
 function tarjetaAleatoria() {
   const tipo = numeroAleatorio(tipos);
   const valor = numeroAleatorio(valores);
-  const color =
-    tipo === ":corazones:" || tipo === ":diamantes:" ? "red" : "black";
+  const color = tipo === "♥" || tipo === "♦" ? "red" : "black";
+
   document.getElementById("top-tipo").innerHTML = tipo;
   document.getElementById("card-value").textContent = valor;
   document.getElementById("bottom-tipo").innerHTML = tipo;
+
   document.getElementById("top-tipo").style.color = color;
   document.getElementById("bottom-tipo").style.color = color;
 }
-document.addEventListener("DOMContentLoaded", tarjetaAleatoria());
+
+document.addEventListener("DOMContentLoaded", tarjetaAleatoria);
 
 const boton = document.querySelector(".boton");
 if (boton) {
